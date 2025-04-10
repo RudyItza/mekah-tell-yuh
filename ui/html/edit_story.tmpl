@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Story</title>
+</head>
+<body>
+    <h1>Edit Your Story</h1>
+    <form action="/edit?id={{.ID}}" method="POST">
+        <input type="text" name="title" value="{{.Title}}" required>
+        <textarea name="content" required>{{.Content}}</textarea>
+        <button type="submit">Update</button>
+    </form>
+    <form action="/delete?id={{.ID}}" method="POST" style="display:inline;">
+        <button type="submit">Delete</button>
+    </form>
+    <a href="/">Back to Home</a>
+</body>
+</html>
