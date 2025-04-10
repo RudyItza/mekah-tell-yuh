@@ -3,13 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <title>Submit a Story</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input, textarea, select {
+            margin: 10px;
+            padding: 10px;
+            width: 300px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 32px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-bottom: 20px;  /* Added margin for spacing between buttons */
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .btn-home {
+            background-color: #008CBA;
+        }
+        .btn-home:hover {
+            background-color: #007B8C;
+        }
+    </style>
 </head>
 <body>
     <h1>Submit Your Story</h1>
     <form action="/submit" method="POST">
+        <!-- Story Title -->
         <input type="text" name="title" placeholder="Story Title" required>
+
+        <!-- Story Content -->
         <textarea name="content" placeholder="Story Content" required></textarea>
+
+        <!-- Language -->
+        <select name="language" required>
+            <option value="Kriol">Kriol</option>
+            <option value="Garifuna">Garifuna</option>
+            <option value="Maya">Maya</option>
+            <option value="Spanish">Spanish</option>
+        </select>
+
+        <!-- Location -->
+        <input type="text" name="location" placeholder="Location" required>
+
+        <!-- Category -->
+        <input type="text" name="category" placeholder="Category" required>
+
+        <!-- Submit Button -->
         <button type="submit">Submit</button>
     </form>
+
+    <!-- Return to Home Button -->
+    <a href="/" class="btn-home">
+        <button type="button">Return to Home</button>
+    </a>
 </body>
 </html>

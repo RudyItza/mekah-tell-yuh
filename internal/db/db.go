@@ -8,7 +8,7 @@ import (
 )
 
 func InitDB() *sql.DB {
-	connStr := "postgres://username:password@localhost/mekah_tell_yuh?sslmode=disable"
+	connStr := "postgres://meka:folklore@localhost/tella?sslmode=disable"
 	db, err := sql.Open("postgres", connStr)
 	if err != nil {
 		log.Fatal("Failed to connect to the database:", err)
