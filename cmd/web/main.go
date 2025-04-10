@@ -5,6 +5,7 @@ import (
 	"net/http"
 
 	"github.com/RudyItza/mekah-tell-yuh/internal/app"
+	"github.com/RudyItza/mekah-tell-yuh/internal/data" // Ensure proper import
 	"github.com/RudyItza/mekah-tell-yuh/internal/db"
 )
 
@@ -13,8 +14,8 @@ func main() {
 	database := db.InitDB()
 	defer database.Close()
 
-	// Create application instance
-	application := app.NewApplication(database)
+	// Create application instance with story model initialization
+	application := app.NewApplication(database, data.NewStoryModel(database))
 
 	// Register routes
 	app.RegisterRoutes(application)

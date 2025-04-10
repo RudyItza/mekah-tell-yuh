@@ -72,6 +72,9 @@
         <!-- Category -->
         <input type="text" name="category" placeholder="Category" required>
 
+        <!-- Hidden User ID Field (set dynamically) -->
+        <input type="hidden" name="user_id" value="{{ .Session.UserID }}"> <!-- Assuming session contains the UserID -->
+
         <!-- Submit Button -->
         <button type="submit">Submit</button>
     </form>
@@ -82,3 +85,4 @@
     </a>
 </body>
 </html>
+
